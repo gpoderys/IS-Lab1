@@ -1,3 +1,6 @@
+clear
+close all
+clc
 % Classification using perceptron
 
 % Reading apple images
@@ -104,6 +107,31 @@ end
 e2 = T(2) - y;
 
 % <...> write the code for another 3 inputs
+
+ v3 = x1(3)*w1+x2(3)*w2+b;
+if v3 > 0
+	y = 1;
+else
+	y = -1;
+end
+e3 = T(3) - y;
+
+ v4 = x1(4)*w1+x2(4)*w2+b;
+if v4 > 0
+	y = 1;
+else
+	y = -1;
+end
+e4 = T(4) - y;
+
+ v5 = x1(5)*w1+x2(5)*w2+b;
+if v5 > 0
+	y = 1;
+else
+	y = -1;
+end
+e5 = T(5) - y;
+
 
 % calculate the total error for these 5 inputs 
 e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5);
