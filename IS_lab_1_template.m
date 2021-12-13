@@ -79,7 +79,8 @@ w2 = randn(1);
 b = randn(1);
 
 % calculate weighted sum with randomly generated parameters
-%v1 = <...>; % write your code here
+v1 = x1(1)*w1+x2(1)*w2+b; % write your code here
+
 % calculate current output of the perceptron 
 if v1 > 0
 	y = 1;
@@ -91,7 +92,8 @@ e1 = T(1) - y;
 
 % repeat the same for the rest 4 inputs x1 and x2
 % calculate wieghted sum with randomly generated parameters
-% v2 = <...> ; % write your code here
+ v2 = x1(2)*w1+x2(2)*w2+b; % write your code here
+ 
 % calculate current output of the perceptron 
 if v2 > 0
 	y = 1;
