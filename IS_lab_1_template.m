@@ -34,7 +34,8 @@ metric_A3=apvalumas_roundness(A3); %roundness
 % 4th apple image(A4)
 hsv_value_A4=spalva_color(A4); %color
 metric_A4=apvalumas_roundness(A4); %roundness
-% 5th apple image(A5)hsv_value_A5=spalva_color(A5); %color
+% 5th apple image(A5)
+hsv_value_A5=spalva_color(A5); %color
 metric_A5=apvalumas_roundness(A5); %roundness
 % 6th apple image(A6)
 hsv_value_A6=spalva_color(A6); %color
@@ -223,4 +224,79 @@ end
 disp(['Paklaida = 0 po ' ,num2str(is), ' iteracijų'])
 v = [v1,v2,v3,v4,v5]
 y = [y1,y2,y3,y4,y5]
+T = T'
+
+%%Testavimas su neapmokytais duomenimis
+x1_test=[hsv_value_A4 hsv_value_A5 hsv_value_A6 hsv_value_A7 hsv_value_A8 hsv_value_A9 hsv_value_P3 hsv_value_P4];
+x2_test=[metric_A4 metric_A5 metric_A6 metric_A7 metric_A8 metric_A9 metric_P3 metric_P4];
+T_test=[1;1;1;1;1;1;-1;-1];
+
+
+v1 = x1_test(1)*w1+x2_test(1)*w2+b; 
+if v1 > 0
+	y1 = 1;
+else
+	y1 = -1;
+end
+e1 = T_test(1) - y1;   
+
+v2 = x1_test(2)*w1+x2_test(2)*w2+b; 
+if v2 > 0
+	y2 = 1;
+else
+	y2 = -1;
+end
+e2 = T_test(2) - y2;       
+
+v3 = x1_test(3)*w1+x2_test(3)*w2+b; 
+if v3 > 0
+	y3 = 1;
+else
+	y3 = -1;
+end
+e3 = T_test(3) - y3;       
+
+v4 = x1_test(4)*w1+x2_test(4)*w2+b; 
+if v4 > 0
+	y4 = 1;
+else
+	y4 = -1;
+end
+e4 = T_test(4) - y4;       
+
+v5 = x1_test(5)*w1+x2_test(5)*w2+b; 
+if v5 > 0
+	y5 = 1;
+else
+	y5 = -1;
+end
+e5 = T_test(5) - y5; 
+
+v6 = x1_test(6)*w1+x2_test(6)*w2+b; 
+if v6 > 0
+	y6 = 1;
+else
+	y6 = -1;
+end
+e6 = T_test(6) - y6; 
+
+v7= x1_test(7)*w1+x2_test(7)*w2+b; 
+if v7 > 0
+	y7 = 1;
+else
+	y7 = -1;
+end
+e7 = T_test(7) - y7; 
+
+v8= x1_test(8)*w1+x2_test(8)*w2+b; 
+if v7 > 0
+	y8 = 1;
+else
+	y8 = -1;
+end
+e8 = T_test(8) - y8; 
+
+v_test= [v1,v2,v3,v4,v5,v6,v7,v8]
+y_test = [y1,y2,y3,y4,y5,y6,y7,y8]
+T_test = T_test'
 
