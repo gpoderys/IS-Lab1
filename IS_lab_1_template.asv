@@ -222,3 +222,5 @@ end
 
 disp(['Paklaida = 0 po ' ,num2str(is), ' iteracijų'])
 v = [v1,v2,v3,v4,v5]
+
+
