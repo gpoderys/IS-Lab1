@@ -1,6 +1,7 @@
 clear
 close all
 clc
+
 % Classification using perceptron
 
 % Reading apple images
@@ -73,7 +74,7 @@ x2=[metric_A1 metric_A2 metric_A3 metric_P1 metric_P2];
 P=[x1;x2];
 
 %Desired output vector
-T=[1;1;1;-1;-1]; % <- ČIA ANKSČIAU BUVO KLAIDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+T=[1;1;1;-1;-1]; % 
 
 % train single perceptron with two inputs and one output
 
@@ -81,6 +82,9 @@ T=[1;1;1;-1;-1]; % <- ČIA ANKSČIAU BUVO KLAIDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 w1 = randn(1);
 w2 = randn(1);
 b = randn(1);
+
+
+
 
 % calculate weighted sum with randomly generated parameters
 v1 = x1(1)*w1+x2(1)*w2+b; % write your code here
@@ -226,11 +230,11 @@ v = [v1,v2,v3,v4,v5]
 y = [y1,y2,y3,y4,y5]
 T = T'
 
+
 %%Testavimas su neapmokytais duomenimis
 x1_test=[hsv_value_A4 hsv_value_A5 hsv_value_A6 hsv_value_A7 hsv_value_A8 hsv_value_A9 hsv_value_P3 hsv_value_P4];
 x2_test=[metric_A4 metric_A5 metric_A6 metric_A7 metric_A8 metric_A9 metric_P3 metric_P4];
 T_test=[1;1;1;1;1;1;-1;-1];
-
 
 v1 = x1_test(1)*w1+x2_test(1)*w2+b; 
 if v1 > 0
