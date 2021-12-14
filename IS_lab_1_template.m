@@ -3,7 +3,6 @@ close all
 clc
 
 % Classification using perceptron
-
 % Reading apple images
 A1=imread('apple_04.jpg');
 A2=imread('apple_05.jpg');
@@ -83,9 +82,6 @@ w1 = randn(1);
 w2 = randn(1);
 b = randn(1);
 
-
-
-
 % calculate weighted sum with randomly generated parameters
 v1 = x1(1)*w1+x2(1)*w2+b; % write your code here
 
@@ -137,7 +133,6 @@ else
 end
 e5 = T(5) - y;
 
-
 % calculate the total error for these 5 inputs 
 e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5);
 
@@ -179,7 +174,6 @@ while e ~= 0 % executes while the total error is not 0
 %   calculate 'y1', ..., 'y5'
 %     
 %   calculate 'e1', ... 'e5'
-
 
 v1 = x1(1)*w1+x2(1)*w2+b; 
 if v1 > 0
@@ -229,7 +223,6 @@ disp(['Paklaida = 0 po ' ,num2str(is), ' iteracijų'])
 v = [v1,v2,v3,v4,v5]
 y = [y1,y2,y3,y4,y5]
 T = T'
-
 
 %%Testavimas su neapmokytais duomenimis
 x1_test=[hsv_value_A4 hsv_value_A5 hsv_value_A6 hsv_value_A7 hsv_value_A8 hsv_value_A9 hsv_value_P3 hsv_value_P4];
